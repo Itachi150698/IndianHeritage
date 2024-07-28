@@ -21,9 +21,6 @@ import {
   ViewportRuler
 } from "./chunk-Q4AQEXLO.js";
 import {
-  SelectionModel
-} from "./chunk-PNAAFNAA.js";
-import {
   animate,
   animateChild,
   query,
@@ -32,6 +29,9 @@ import {
   transition,
   trigger
 } from "./chunk-KD3LE2VQ.js";
+import {
+  SelectionModel
+} from "./chunk-PNAAFNAA.js";
 import {
   A,
   ActiveDescendantKeyManager,
@@ -1504,4 +1504,4 @@ export {
   MatSelectTrigger,
   MatSelectModule
 };
-//# sourceMappingURL=chunk-CMJBGTH6.js.map
+//# sourceMappingURL=chunk-4SHTQBHC.js.map
