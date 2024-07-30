@@ -18,12 +18,6 @@ import {
   MatFormFieldModule
 } from "./chunk-2VPM6MKG.js";
 import {
-  FormGroupDirective,
-  NgControl,
-  NgForm,
-  Validators
-} from "./chunk-KBCLPT66.js";
-import {
   animate,
   animateChild,
   query,
@@ -56,6 +50,12 @@ import {
   hasModifierKey,
   removeAriaReferencedId
 } from "./chunk-4Z7QFOOX.js";
+import {
+  FormGroupDirective,
+  NgControl,
+  NgForm,
+  Validators
+} from "./chunk-KBCLPT66.js";
 import {
   CommonModule,
   NgClass
@@ -1504,4 +1504,4 @@ export {
   MatSelectTrigger,
   MatSelectModule
 };
-//# sourceMappingURL=chunk-MMHH25GF.js.map
+//# sourceMappingURL=chunk-6FI35BAI.js.map
