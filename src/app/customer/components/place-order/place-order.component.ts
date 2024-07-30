@@ -33,10 +33,15 @@ export class PlaceOrderComponent {
       if(res.id != null){
         this.snackbar.open("Order placed successfully", "Close", {duration:5000})
         this.router.navigateByUrl("/customer/my-orders");
+        this.closeForm();
       }else{
         this.snackbar.open("Something went wrong", "Close", {duration:5000})
       }
     })
+  }
+
+  closeForm(){
+    this.dialog.closeAll();
   }
 
 }
