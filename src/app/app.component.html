@@ -1,0 +1,81 @@
+<!-- <div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn">
+  <mat-toolbar color="primary" class="navbar">
+  <span class="navbar-brand">India's Heritage Revival</span>
+  <span class="spacer"></span>
+  <button mat-button routerLink="/order" routerLinkActive="active">Track Order</button>
+  <button mat-button routerLink="/signup" routerLinkActive="active">Register</button>
+  <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
+</mat-toolbar>
+</div>
+
+<div *ngIf="isAdminLoggedIn">
+  <mat-toolbar color="primary" class="navbar">
+  <span class="navbar-brand">India's Heritage Revival</span>
+  <span class="spacer"></span>
+  <button mat-button routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</button>
+  <button mat-button routerLink="/admin/analytics" routerLinkActive="active">Analytics</button>
+  <button mat-button routerLink="/admin/category" routerLinkActive="active">Category</button>
+  <button mat-button routerLink="/admin/product" routerLinkActive="active">Product</button>
+  <button mat-button routerLink="/admin/orders" routerLinkActive="active">Orders</button>
+  <button mat-button routerLink="/admin/post-coupons" routerLinkActive="active">Coupons</button>
+  <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
+</mat-toolbar>
+</div>
+
+<div *ngIf="isCustomerLoggedIn">
+  <mat-toolbar color="primary" class="navbar">
+  <span class="navbar-brand">India's Heritage Revival</span>
+  <span class="spacer"></span>
+  <button mat-button routerLink="/customer/dashboard" routerLinkActive="active">Dashboard</button>
+  <button mat-button routerLink="/customer/cart" routerLinkActive="active">Cart</button>
+  <button mat-button routerLink="/customer/my_orders" routerLinkActive="active">Orders</button>
+  <button mat-button routerLink="/customer/wishlist" routerLinkActive="active">Wishlist</button>
+  <button mat-button routerLink="/customer/profile" routerLinkActive="active">Profile</button>
+  <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
+</mat-toolbar>
+</div>
+
+
+<router-outlet></router-outlet> -->
+
+<div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn">
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand text-white" href="#">India's Heritage Revival</a>
+    <div class="ml-auto">
+      <a class="btn btn-light mr-2" routerLink="/order" routerLinkActive="active">Track Order</a>
+      <a class="btn btn-light mr-2" routerLink="/signup" routerLinkActive="active">Register</a>
+      <a class="btn btn-light" routerLink="/login" routerLinkActive="active">Login</a>
+    </div>
+  </nav>
+</div>
+
+<div *ngIf="isAdminLoggedIn">
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand text-white" href="#">India's Heritage Revival</a>
+    <div class="ml-auto">
+      <a class="btn btn-light mr-2" routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
+      <a class="btn btn-light mr-2" routerLink="/admin/analytics" routerLinkActive="active">Analytics</a>
+      <a class="btn btn-light mr-2" routerLink="/admin/category" routerLinkActive="active">Category</a>
+      <a class="btn btn-light mr-2" routerLink="/admin/product" routerLinkActive="active">Product</a>
+      <a class="btn btn-light mr-2" routerLink="/admin/orders" routerLinkActive="active">Orders</a>
+      <a class="btn btn-light mr-2" routerLink="/admin/post-coupons" routerLinkActive="active">Coupons</a>
+      <button class="btn btn-light" routerLinkActive="active" (click)="logout()">Logout</button>
+    </div>
+  </nav>
+</div>
+
+<!-- <div *ngIf="isCustomerLoggedIn">
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand text-white" href="#">India's Heritage Revival</a>
+    <div class="ml-auto">
+      <a class="btn btn-light mr-2" routerLink="/customer/dashboard" routerLinkActive="active">Dashboard</a>
+      <a class="btn btn-light mr-2" routerLink="/customer/cart" routerLinkActive="active">Cart</a>
+      <a class="btn btn-light mr-2" routerLink="/customer/my_orders" routerLinkActive="active">Orders</a>
+      <a class="btn btn-light mr-2" routerLink="/customer/wishlist" routerLinkActive="active">Wishlist</a>
+      <a class="btn btn-light mr-2" routerLink="/customer/profile" routerLinkActive="active">Profile</a>
+      <button class="btn btn-light" routerLinkActive="active" (click)="logout()">Logout</button>
+    </div>
+  </nav>
+</div> -->
+
+<router-outlet></router-outlet>

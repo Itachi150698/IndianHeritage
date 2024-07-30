@@ -1,0 +1,100 @@
+<!-- <form [formGroup]="searchProductForm" class="search-form" (submit)="submitForm()">
+  <mat-form-field appearance="outline" class="search-input">
+<mat-label>Enter Keyword to search</mat-label>
+<input matInput formControlName="title">
+
+<button mat-button matSuffix color="primary" [disabled]="searchProductForm.invalid">
+  <mat-icon>search</mat-icon>
+</button>
+  </mat-form-field>
+</form>
+
+<div class="product-list">
+
+  <mat-card class="product-card" *ngFor="let product of products">
+    <div class="product-image">
+      <img [src]="product.processedImg" alt="product-image">
+    </div>
+    <div class="product-details">
+      <h2 class="product-name">{{product.name}}</h2>
+      <p class="product-description">{{product.description}}</p>
+
+      <mat-divider></mat-divider>
+      <div class="product-info">
+        <div class="info-row">
+          <span class="info-label">Price:</span>
+          <span class="info-value">${{product.price}}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Category:</span>
+          <span class="info-value">{{product.categoryName}}</span>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+      <div class="actions">
+        <button mat-raised-button color="primary" class="update-button" [routerLink]="'/admin/faq/' + product.id">
+          FAQ
+        </button>
+        <button mat-raised-button color="accent" class="update-button" [routerLink]="'/admin/product/' + product.id">
+          Update
+        </button>
+        <button mat-raised-button color="warn" class="delete-button" (click)="deleteProduct(product.id)">
+          Delete
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</div> -->
+
+<form [formGroup]="searchProductForm" class="search-form" (submit)="submitForm()">
+  <div class="form-group">
+    <label for="searchInput">Enter Keyword to search</label>
+    <input type="text" id="searchInput" class="form-control" formControlName="title">
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="searchProductForm.invalid">
+    <i class="fas fa-search"></i> Search
+  </button>
+</form>
+
+<div class="product-list mt-4">
+  <div class="card mb-3" *ngFor="let product of products">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img [src]="product.processedImg" class="card-img" alt="product-image">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.description}}</p>
+
+          <hr>
+          <div class="product-info">
+            <div class="d-flex justify-content-between">
+              <span class="font-weight-bold">Price:</span>
+              <span>${{product.price}}</span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span class="font-weight-bold">Category:</span>
+              <span>{{product.categoryName}}</span>
+            </div>
+          </div>
+
+          <hr>
+          <div class="actions d-flex justify-content-between">
+            <a [routerLink]="'/admin/faq/' + product.id" class="btn btn-primary">
+              FAQ
+            </a>
+            <a [routerLink]="'/admin/product/' + product.id" class="btn btn-secondary">
+              Update
+            </a>
+            <button class="btn btn-danger" (click)="deleteProduct(product.id)">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
