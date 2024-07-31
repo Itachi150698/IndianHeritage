@@ -1,7 +1,7 @@
 import {
   MatSelect,
   MatSelectModule
-} from "./chunk-6FI35BAI.js";
+} from "./chunk-TIY2A3ZP.js";
 import {
   ComponentPortal,
   Overlay,
@@ -26,6 +26,7 @@ import {
   transition,
   trigger
 } from "./chunk-KD3LE2VQ.js";
+import "./chunk-KBCLPT66.js";
 import {
   A11yModule,
   AriaDescriber,
@@ -40,7 +41,6 @@ import {
   hasModifierKey,
   normalizePassiveListenerOptions
 } from "./chunk-4Z7QFOOX.js";
-import "./chunk-KBCLPT66.js";
 import {
   CommonModule,
   DOCUMENT,

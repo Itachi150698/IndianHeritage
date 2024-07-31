@@ -29,6 +29,12 @@ addCategory(categoryDto:any): Observable<any>{
     })
   }
 
+  updateProduct(productId:any, productDto:any): Observable<any>{
+    return this.http.put(BASIC_URL + `api/admin/product/${productId}`, productDto, {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
    getAllProducts(): Observable<any>{
     return this.http.get(BASIC_URL + 'api/admin/products', {
       headers: this.createAuthorizationHeader(),
@@ -74,6 +80,12 @@ addCategory(categoryDto:any): Observable<any>{
 
   postFAQ(productId:number, faqDto:any): Observable<any>{
     return this.http.post(BASIC_URL + `api/admin/faq/${productId}`,faqDto, {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
+  getProductById(productId): Observable<any>{
+    return this.http.get(BASIC_URL + `api/admin/product/${productId}`, {
       headers: this.createAuthorizationHeader(),
     })
   }
