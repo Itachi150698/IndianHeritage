@@ -5,12 +5,6 @@ import {
   MatFormFieldModule
 } from "./chunk-2VPM6MKG.js";
 import {
-  FormGroupDirective,
-  NgControl,
-  NgForm,
-  Validators
-} from "./chunk-KBCLPT66.js";
-import {
   ErrorStateMatcher,
   MatCommonModule,
   Platform,
@@ -21,6 +15,12 @@ import {
   getSupportedInputTypes,
   normalizePassiveListenerOptions
 } from "./chunk-4Z7QFOOX.js";
+import {
+  FormGroupDirective,
+  NgControl,
+  NgForm,
+  Validators
+} from "./chunk-KBCLPT66.js";
 import {
   DOCUMENT
 } from "./chunk-V4I6KYGB.js";
@@ -951,4 +951,4 @@ export {
   MatInput,
   MatInputModule
 };
-//# sourceMappingURL=chunk-CGATX6LQ.js.map
+//# sourceMappingURL=chunk-ORF5LKJ5.js.map
