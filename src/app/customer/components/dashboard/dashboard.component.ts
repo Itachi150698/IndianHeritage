@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AdminService } from '../../../admin/service/admin.service';
 import { CustomerService } from '../../services/customer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +16,8 @@ export class DashboardComponent {
 
   constructor(private customerService: CustomerService,
     private fb: FormBuilder,
-    private snackbar: MatSnackBar
+    private snackbar: MatSnackBar,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -54,5 +56,9 @@ export class DashboardComponent {
         duration: 5000
       })
     })
+  }
+
+  viewProductDetail(productId: number): void {
+    this.router.navigate(['/customer/product', productId]);
   }
 }
