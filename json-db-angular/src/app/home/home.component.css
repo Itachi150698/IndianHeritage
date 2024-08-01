@@ -1,0 +1,461 @@
+/* html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #2b2929;
+  height: 100%;
+  background: url('https://wallpaperaccess.com/full/4650980.png') no-repeat center center fixed;
+  background-size: cover;
+} */
+ *{
+  background: url('https://wallpaperaccess.com/full/4650980.png') no-repeat center center fixed;
+ }
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.main-article {
+  flex: 2;
+  margin: 10px;
+  position: relative;
+}
+
+.side-articles, .bottom-articles {
+  flex: 1;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-articles {
+  flex-direction: row;
+}
+
+.article {
+  background-color: #faf6f6f8;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.article img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.article-title {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.article-info {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #bbbbbb;
+}
+
+.read-now {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.read-now:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  display: block;
+}
+
+.image-container .read-now {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.image-container .read-now:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-container {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+
+.carousel-container::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 60px;
+ 
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+h1 {
+  color: #c2185b;
+  margin-bottom: 20px;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 300px;
+  flex-shrink: 0;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.carousel-item p {
+  margin-top: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.carousel button {
+  background-color: #c2185b;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel button.left {
+  left: 10px;
+}
+
+.carousel button.right {
+  right: 10px;
+}
+
+header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#headerVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+header h1 {
+  position: relative;
+  z-index: 1;
+  color: rgb(18, 17, 17);
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-container {
+  text-align: center;
+  padding: 20px;
+  background-size: cover;
+  /* background: url('https://wallpaperaccess.com/full/4650980.png') repeat-x bottom; */
+  position: absolute;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+
+.carousel-container::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 60px;
+  /* background: url('https://wallpaperaccess.com/full/4650980.png') repeat-x bottom; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.decorative-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decorative-line .line {
+  height: 2px;
+  background-color: #b22828;
+  flex-grow: 1;
+  margin: 0 50px;
+  border-bottom: 2px dashed #b22828;
+}
+
+.decorative-line .ornament {
+  width: 5px;
+  height: 5px;
+  background-size: contain;
+  margin-top: -10px;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  width: 80%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+}
+
+.carousel-slide {
+  min-width: 150px;
+  margin: 10px;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.carousel-slide img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 10px;
+}
+
+.carousel-slide p {
+  font-size: 0.9em;
+  color: #333;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.main-article {
+  flex: 2;
+  margin: 10px;
+  position: relative;
+}
+
+.side-articles, .bottom-articles {
+  flex: 1;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-articles {
+  flex-direction: row;
+}
+
+.article {
+  background-color: #faf6f6f8;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.article img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.article-title {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.article-info {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #bbbbbb;
+}
+
+.read-now {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.read-now:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  display: block;
+}
+
+.image-container .read-now {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.image-container .read-now:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-container {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  padding-bottom: 100px; /* Adjust as needed for bottom pattern */
+}
+
+.carousel-container::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 60px;
+  /* background: url('https://wallpaperaccess.com/full/4650980.png') repeat-x bottom; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+h1 {
+  color: #c2185b;
+  margin-bottom: 20px;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 300px;
+  flex-shrink: 0;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.carousel-item p {
+  margin-top: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.carousel button {
+  background-color: #c2185b;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel button.left {
+  left: 10px;
+}
+
+.carousel button.right {
+  right: 10px;
+}
