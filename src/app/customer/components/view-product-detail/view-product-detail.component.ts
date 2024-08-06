@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../services/customer.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -7,55 +7,55 @@ import { UserStorageService } from '../../../services/storage/user-storage.servi
 @Component({
   selector: 'app-view-product-detail',
   templateUrl: './view-product-detail.component.html',
-  styleUrl: './view-product-detail.component.scss'
+  styleUrls: ['./view-product-detail.component.scss']
 })
-export class ViewProductDetailComponent {
+export class ViewProductDetailComponent implements OnInit {
 
-  productId:number = this.activatedRoute.snapshot.params["productId"];
+  productId: number = this.activatedRoute.snapshot.params["productId"];
+  product: any;
+  FAQS: any[] = [];
+  reviews: any[] = [];
 
-  product:any;
-  FAQS:any[] = [];
-  reviews:any[] = [];
-
-  constructor(private customerService:CustomerService,
-    private activatedRoute:ActivatedRoute,
-    private snackbar:MatSnackBar
+  constructor(
+    private customerService: CustomerService,
+    private activatedRoute: ActivatedRoute,
+    private snackbar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
     this.getProductDetailById();
   }
 
-  getProductDetailById(){
-    this.customerService.getProductDetailById(this.productId).subscribe(res=>{
+  getProductDetailById(): void {
+    this.customerService.getProductDetailById(this.productId).subscribe(res => {
       this.product = res.productDto;
       this.product.processedImg = 'data:image/png;base64,' + res.productDto.byteImg;
 
       this.FAQS = res.faqDtoList;
 
-      res.reviewDtoList.forEach(element => {
+      this.reviews = res.reviewDtoList.map(element => {
         element.processedImg = 'data:image/png;base64,' + element.returnedImg;
-        this.reviews.push(element);
+        return element;
       });
-    })
+    });
   }
 
-  addToWishlist(){
+  addToWishlist(): void {
     const wishlistDto = {
       userId: UserStorageService.getUserId(),
       productId: this.productId
-    }
+    };
 
-    this.customerService.addProductToWishlist(wishlistDto).subscribe(res=>{
-      if(res.id != null){
+    this.customerService.addProductToWishlist(wishlistDto).subscribe(res => {
+      if (res.id != null) {
         this.snackbar.open("Product Added to Wishlist Successfully!", "Close", {
-          duration:5000
+          duration: 5000
         });
-      }else{
+      } else {
         this.snackbar.open("Something went wrong!", "ERROR", {
-          duration:5000
+          duration: 5000
         });
       }
-    })
+    });
   }
 }

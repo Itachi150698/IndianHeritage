@@ -23,7 +23,7 @@ export class CustomerService {
     })
   }
 
-   addToCart(productId:any): Observable<any>{
+   addProductToCart(productId:any): Observable<any>{
     const cartDto = {
       productId: productId,
       userId: UserStorageService.getUserId()
