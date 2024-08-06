@@ -20,7 +20,6 @@ body {
 }
 
 .card {
-    background-color: #1d4c70;
     border: none;
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -41,4 +40,22 @@ body {
 
 .card:hover .card-img-top {
     transform: scale(1.05);
+
 }
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 2s ease-out;
+  }
+  
+
+  

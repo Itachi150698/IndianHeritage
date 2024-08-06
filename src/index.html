@@ -13,16 +13,16 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 
   <script>
   document.addEventListener('DOMContentLoaded', function () {
   const buttons = document.querySelectorAll('[data-toggle="collapse"]');
-  
   buttons.forEach(button => {
       button.addEventListener('click', function () {
           // Get the target collapse ID
@@ -39,6 +39,51 @@
   });
 });
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const track = document.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const nextButton = document.getElementById('scroll-right');
+      const prevButton = document.getElementById('scroll-left');
+      const slideWidth = slides[0].getBoundingClientRect().width;
+
+      // Position slides next to one another
+      const setSlidePosition = (slide, index) => {
+          slide.style.left = slideWidth * index + 'px';
+      };
+      
+      slides.forEach(setSlidePosition);
+
+      // Move to slide
+      const moveToSlide = (track, currentSlide, targetSlide) => {
+          track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+          currentSlide.classList.remove('current-slide');
+          targetSlide.classList.add('current-slide');
+      };
+
+      // Move to next slide
+      nextButton.addEventListener('click', () => {
+          const currentSlide = track.querySelector('.current-slide');
+          const nextSlide = currentSlide.nextElementSibling;
+
+          if (nextSlide) {
+              moveToSlide(track, currentSlide, nextSlide);
+          }
+      });
+
+      // Move to previous slide
+      prevButton.addEventListener('click', () => {
+          const currentSlide = track.querySelector('.current-slide');
+          const prevSlide = currentSlide.previousElementSibling;
+
+          if (prevSlide) {
+              moveToSlide(track, currentSlide, prevSlide);
+          }
+      });
+  });
+</script>
+
   <app-root></app-root>
 </body>
 </html>
