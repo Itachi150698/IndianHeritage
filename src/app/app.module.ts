@@ -7,12 +7,16 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MiddleComponent } from './middle/middle.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
     NavbarComponent,
+    MiddleComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
