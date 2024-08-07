@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './pages/home/home.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MiddleComponent } from './middle/middle.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './partials/footer/footer.component';
+import { HeaderComponent } from './partials/header/header.component';
+import { MiddleComponent } from './partials/middle/middle.component';
+import { JewelleryComponent } from './pages/jewellery/jewellery.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     MiddleComponent,
     FooterComponent,
+    JewelleryComponent,
   ],
   imports: [
     BrowserModule,
